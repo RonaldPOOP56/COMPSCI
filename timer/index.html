@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Timer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Timer</h1>
+      <div id="localClock" class="clock">--:--:--</div>
+    </header>
+
+    <nav class="tabs">
+      <button data-tab="countdown" class="active">Countdown</button>
+      <button data-tab="stopwatch">Stopwatch</button>
+    </nav>
+
+    <main>
+      <section id="countdown" class="tab active">
+        <div class="controls-row">
+          <label><input id="cdHours" type="number" min="0" value="0"> h</label>
+          <label><input id="cdMinutes" type="number" min="0" max="59" value="1"> m</label>
+          <label><input id="cdSeconds" type="number" min="0" max="59" value="0"> s</label>
+        </div>
+
+        <div class="display" id="cdDisplay">00:01:00</div>
+        <div class="buttons">
+          <button id="cdStart">Start</button>
+          <button id="cdPause" disabled>Pause</button>
+          <button id="cdReset" disabled>Reset</button>
+        </div>
+
+        <div class="presets">
+          <div class="preset-row">
+            <input id="presetName" placeholder="Preset name">
+            <button id="savePreset">Save Preset</button>
+          </div>
+          <div id="presetList" class="preset-list"></div>
+        </div>
+      </section>
+
+      <section id="stopwatch" class="tab">
+        <div class="display" id="swDisplay">00:00:00.000</div>
+        <div class="buttons">
+          <button id="swStart">Start</button>
+          <button id="swLap" disabled>Lap</button>
+          <button id="swReset" disabled>Reset</button>
+        </div>
+        <ol id="laps" class="laps"></ol>
+      </section>
+    </main>
+
+    <footer>
+      <small>Space = start/pause, L = lap, R = reset</small>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Notetaking</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Notetaking</h1>
+
+    <div class="app">
+      <aside class="sidebar">
+        <div class="search">
+          <input id="search" placeholder="Search notes">
+          <button id="newBtn">New</button>
+        </div>
+        <ul id="notesList" class="notes-list" aria-live="polite"></ul>
+      </aside>
+
+      <main class="editor">
+        <input id="title" class="title" placeholder="Title">
+        <div class="toolbar">
+          <button id="saveBtn" class="primary">Save</button>
+          <button id="deleteBtn" class="danger">Delete</button>
+          <button id="previewToggle">Preview</button>
+        </div>
+        <textarea id="body" class="body" placeholder="Write your note..."></textarea>
+        <div id="preview" class="preview hidden"></div>
+      </main>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

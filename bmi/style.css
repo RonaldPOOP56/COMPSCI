@@ -1,0 +1,54 @@
+:root{
+  --bg:#f4f7fb;
+  --card:#ffffff;
+  --accent:#2b74ff;
+  --muted:#6b7280;
+  --success:#10b981;
+  --warning:#f59e0b;
+  --danger:#ef4444;
+  --shadow: rgba(11,20,50,0.06);
+}
+*{box-sizing:border-box;font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;}
+body{margin:0;background:linear-gradient(180deg,#e9f0ff 0%,var(--bg) 100%);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;}
+.container{width:100%;max-width:720px;text-align:center}
+h1{margin:0 0 16px;font-size:26px;color:#0f172a}
+
+.card{background:var(--card);padding:16px;border-radius:12px;box-shadow:0 10px 30px var(--shadow);margin-bottom:14px;text-align:left}
+.form-card{max-width:520px;margin:0 auto 18px}
+.row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+.row label{font-weight:700;color:#0b1220}
+.input-inline{display:flex;gap:8px;align-items:center;width:60%}
+.input-inline input{flex:1;padding:10px;border-radius:8px;border:1px solid #e6e9ef;font-size:16px}
+.input-inline select{padding:10px;border-radius:8px;border:1px solid #e6e9ef;background:white}
+
+.actions{justify-content:flex-end}
+.btn{padding:10px 14px;border-radius:8px;border:0;background:#f3f4f6;color:#0b1220;cursor:pointer}
+.btn.primary{background:var(--accent);color:#fff;font-weight:700}
+
+.result{margin-top:6px;color:var(--muted);display:flex;flex-direction:column;gap:6px}
+.bmi-value{font-size:18px;font-weight:800;color:#0b1220}
+.bmi-category{font-size:14px;color:var(--muted)}
+
+.chart-card{max-width:680px;margin:0 auto}
+.chart-labels{display:flex;justify-content:space-between;color:var(--muted);font-size:13px;margin-bottom:8px}
+.bmi-bar{position:relative;display:flex;height:34px;border-radius:999px;overflow:hidden}
+.seg{height:100%}
+.seg.under{background:#a5b4fc;width:18%}   /* <18.5 */
+.seg.normal{background:#86efac;width:43%}  /* 18.5-24.9 */
+.seg.over{background:#fde68a;width:20%}    /* 25-29.9 */
+.seg.obese{background:#fca5a5;width:19%}    /* >=30 */
+
+.pointer{position:absolute;top:-8px;width:2px;height:50px;background:#0b1220;left:0;transform:translateX(-50%);display:flex;align-items:flex-start;justify-content:center}
+.pointer span{background:#0b1220;color:white;padding:4px 8px;border-radius:6px;font-size:13px;margin-top:-36px;white-space:nowrap}
+
+.legend{display:flex;justify-content:space-between;color:var(--muted);font-size:13px;margin-top:10px}
+.note{font-size:13px;color:var(--muted);text-align:center}
+
+/* responsive tweaks */
+@media (max-width:520px){
+  .input-inline{width:100% ;flex-direction:row}
+  .row{flex-direction:column;align-items:flex-start}
+  .actions{justify-content:space-between}
+  .chart-labels{font-size:12px}
+  .pointer span{font-size:12px}
+}

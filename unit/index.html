@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Unit Converter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Unit Converter</h1>
+
+    <div class="card converter-card">
+      <div class="row">
+        <label for="category">Category</label>
+        <select id="category"></select>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <label>From</label>
+          <input id="fromValue" type="number" step="any" placeholder="Enter value">
+          <select id="fromUnit"></select>
+        </div>
+
+        <div class="swap-col">
+          <button id="swapBtn" title="Swap">⇄</button>
+        </div>
+
+        <div class="col">
+          <label>To</label>
+          <div id="resultDisplay" class="result-display">—</div>
+          <select id="toUnit"></select>
+        </div>
+      </div>
+
+      <div class="row actions">
+        <button id="convertBtn" class="btn primary">Convert</button>
+        <button id="clearBtn" class="btn">Clear</button>
+      </div>
+
+      <div class="row presets" id="presets"></div>
+    </div>
+
+    <div class="card info">
+      <div class="info-title">Quick tips</div>
+      <ul>
+        <li>Choose category (Length, Weight, Temperature, Volume, Speed)</li>
+        <li>Type a number and press Convert or Enter</li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

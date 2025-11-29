@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Scientific Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Calculator</h1>
+
+    <div class="calc">
+      <div id="display" class="display">0</div>
+
+      <div class="keys">
+        <!-- row 1 -->
+        <button class="btn" data-value="(">(</button>
+        <button class="btn" data-value=")">)</button>
+        <button class="btn" data-value="π">π</button>
+        <button class="btn" data-value="e">e</button>
+        <button class="btn" data-fn="exp">exp</button>
+
+        <!-- row 2 -->
+        <button class="btn" data-fn="sin">sin</button>
+        <button class="btn" data-fn="cos">cos</button>
+        <button class="btn" data-fn="tan">tan</button>
+        <button class="btn" data-fn="asin">asin</button>
+        <button class="btn" data-fn="acos">acos</button>
+
+        <!-- row 3 -->
+        <button class="btn" data-fn="ln">ln</button>
+        <button class="btn" data-fn="log">log</button>
+        <button class="btn" data-fn="sqrt">√</button>
+        <button class="btn" data-fn="abs">abs</button>
+        <button class="btn" data-value="^">xʸ</button>
+
+        <!-- row 4 -->
+        <button class="btn" data-fn="sqr">x²</button>
+        <button class="btn" data-fn="cube">x³</button>
+        <button class="btn" data-value="%">%</button>
+        <button class="btn" data-action="clear">C</button>
+        <button class="btn" data-action="del">⌫</button>
+
+        <!-- numeric rows: numbers first, operator last in each row -->
+        <button class="btn" data-value="7">7</button>
+        <button class="btn" data-value="8">8</button>
+        <button class="btn" data-value="9">9</button>
+        <button class="btn" data-value="." style="visibility:hidden" aria-hidden="true">.</button> <!-- spacer -->
+        <button class="btn operator" data-value="÷">÷</button>
+
+        <button class="btn" data-value="4">4</button>
+        <button class="btn" data-value="5">5</button>
+        <button class="btn" data-value="6">6</button>
+        <button class="btn" data-fn="neg">±</button>
+        <button class="btn operator" data-value="×">×</button>
+
+        <button class="btn" data-value="1">1</button>
+        <button class="btn" data-value="2">2</button>
+        <button class="btn" data-value="3">3</button>
+        <button class="btn" data-value="0">0</button>
+        <button class="btn operator" data-value="−">−</button>
+
+        <button class="btn" data-value=".">.</button>
+        <button class="btn" data-value="00">00</button>
+        <button class="btn equal" data-action="equals">=</button>
+        <button class="btn wide" data-value="ANS" style="visibility:hidden" aria-hidden="true">ANS</button>
+        <button class="btn operator" data-value="+">+</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

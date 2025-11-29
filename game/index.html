@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tic Tac Toe</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <h1>Tic Tac Toe</h1>
+
+    <div class="status" id="status" aria-live="polite">Loading…</div>
+
+    <div id="board" class="board" role="grid" aria-label="Tic Tac Toe board"></div>
+
+    <div class="controls">
+      <button id="newBtn">New Round</button>
+      <button id="resetBtn">Reset Scores</button>
+      <button id="saveBtn">Save</button>
+      <button id="loadBtn">Load</button>
+    </div>
+
+    <div class="scores">
+      <div><strong><b>X</b></strong>: <span id="scoreX">0</span></div>
+      <div><strong><b>O</b></strong>: <span id="scoreO">0</span></div>
+      <div><strong>Draws</strong>: <span id="scoreD">0</span></div>
+    </div>
+
+    <footer class="hint">Click a square to play. 'New Round' clears the board; 'Reset Scores' clears all saved data.</footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

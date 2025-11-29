@@ -1,0 +1,38 @@
+:root{
+  --bg:#f4f7fb;
+  --card:#ffffff;
+  --accent:#2b74ff;
+  --muted:#6b7280;
+  --shadow: rgba(11,20,50,0.06);
+}
+*{box-sizing:border-box;font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;}
+body{margin:0;background:linear-gradient(180deg,#e9f0ff 0%,var(--bg) 100%);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;}
+.container{width:100%;max-width:720px;text-align:center}
+h1{margin:0 0 14px;font-size:26px;color:#0f172a}
+
+.card{background:var(--card);padding:14px;border-radius:12px;box-shadow:0 10px 30px var(--shadow);margin-bottom:14px;text-align:left}
+.converter-card{max-width:680px;margin:0 auto 12px}
+.row{display:flex;gap:12px;align-items:center;margin-bottom:12px}
+.row label{font-weight:700;color:#0b1220;min-width:70px;text-align:left}
+.col{flex:1;display:flex;flex-direction:column;gap:8px}
+.input-inline{display:flex;gap:8px}
+input[type="number"]{padding:10px;border-radius:8px;border:1px solid #e6e9ef;font-size:16px}
+select{padding:10px;border-radius:8px;border:1px solid #e6e9ef;background:white;font-size:15px}
+
+.swap-col{display:flex;align-items:center}
+#swapBtn{padding:8px 10px;border-radius:10px;border:0;background:#f3f4f6;cursor:pointer;font-size:18px}
+.result-display{padding:10px;border-radius:8px;border:1px solid #e6e9ef;background:#f9fafb;min-height:44px;display:flex;align-items:center;justify-content:flex-start;font-weight:700;color:#0b1220}
+
+.actions{justify-content:flex-end}
+.btn{padding:10px 14px;border-radius:8px;border:0;background:#f3f4f6;color:#0b1220;cursor:pointer}
+.btn.primary{background:var(--accent);color:#fff;font-weight:700}
+
+.presets{flex-wrap:wrap;gap:8px}
+.presets button{padding:6px 10px;border-radius:8px;border:0;background:#eef2ff;color:var(--accent);cursor:pointer;font-size:13px}
+
+.info ul{margin:8px 0 0 18px;color:var(--muted);font-size:14px}
+@media (max-width:600px){
+  .row{flex-direction:column;align-items:stretch}
+  .swap-col{justify-content:center}
+  .actions{justify-content:space-between}
+}

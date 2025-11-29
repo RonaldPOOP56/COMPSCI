@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Calendar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <button id="prevMonth" class="nav">‹</button>
+      <div class="month-title" id="monthTitle">Month</div>
+      <button id="nextMonth" class="nav">›</button>
+      <button id="todayBtn" class="today">Today</button>
+      <!-- local clock -->
+      <div id="localClock" class="local-clock" aria-live="polite">--:--</div>
+    </header>
+
+    <main class="main">
+      <section class="calendar">
+        <div class="weekdays">
+          <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+        </div>
+        <div id="daysGrid" class="days-grid" aria-live="polite"></div>
+      </section>
+
+      <aside class="sidebar">
+        <div class="selected-date" id="selectedDate">Select a date</div>
+
+        <form id="eventForm" class="event-form">
+          <input type="text" id="eventTitle" placeholder="Event title" required />
+
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px;">
+            <div style="display:flex;flex-direction:column;">
+              <label style="font-size:12px;color:#6b7280">Start date</label>
+              <input type="date" id="eventStartDate" />
+            </div>
+            <div style="display:flex;flex-direction:column;">
+              <label style="font-size:12px;color:#6b7280">Start time</label>
+              <input type="time" id="eventStartTime" />
+            </div>
+
+            <div style="display:flex;flex-direction:column;">
+              <label style="font-size:12px;color:#6b7280">End date</label>
+              <input type="date" id="eventEndDate" />
+            </div>
+            <div style="display:flex;flex-direction:column;">
+              <label style="font-size:12px;color:#6b7280">End time</label>
+              <input type="time" id="eventEndTime" />
+            </div>
+          </div>
+
+          <textarea id="eventNotes" placeholder="Notes (optional)"></textarea>
+          <div class="form-actions">
+            <button type="submit" class="btn primary">Save</button>
+            <button type="button" id="clearBtn" class="btn">Clear</button>
+          </div>
+        </form>
+
+        <div class="events-list">
+          <h3>Events</h3>
+          <ul id="eventsList"></ul>
+        </div>
+
+        <div class="agenda">
+          <h3>Upcoming</h3>
+          <ul id="upcomingList"></ul>
+        </div>
+      </aside>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

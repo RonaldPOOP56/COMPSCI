@@ -1,0 +1,45 @@
+:root{
+  --bg:#f7f9fc; --card:#fff; --accent:#2b74ff; --muted:#6b7280; --shadow:rgba(11,20,50,0.06);
+}
+*{box-sizing:border-box;font-family:system-ui,Segoe UI,Roboto,Arial}
+body{margin:0;background:var(--bg);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.wrap{width:100%;max-width:520px}
+header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+h1{margin:0;font-size:20px}
+.clock{background:#fff;padding:6px 10px;border-radius:8px;box-shadow:0 6px 18px var(--shadow);font-family:monospace}
+.tabs{display:flex;gap:8px;margin-bottom:12px}
+.tabs button{flex:1;padding:8px;border-radius:8px;border:0;background:#fff;cursor:pointer}
+.tabs button.active{background:var(--accent);color:#fff;font-weight:700}
+main{background:var(--card);padding:14px;border-radius:12px;box-shadow:0 10px 30px var(--shadow);min-height:320px;transition:min-height .12s ease}
+.controls-row{display:flex;gap:8px;margin-bottom:10px}
+.controls-row input{width:64px;padding:6px;border-radius:6px;border:1px solid #e6e9ef}
+.display{font-size:28px;padding:12px;border-radius:8px;background:#f3f5ff;text-align:center;margin-bottom:10px;min-height:56px}
+.buttons{display:flex;gap:8px;justify-content:center;margin-bottom:10px;min-height:48px;align-items:center}
+.buttons button{padding:8px 12px;border-radius:8px;border:0;background:var(--accent);color:#fff;cursor:pointer}
+.buttons button[disabled]{opacity:0.5;cursor:not-allowed}
+.presets{display:flex;flex-direction:column;gap:8px}
+.preset-row{display:flex;gap:8px}
+#presetList{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;min-height:80px}
+.preset-btn{background:#eef2ff;border:1px solid #dbeafe;padding:6px 8px;border-radius:8px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.preset-btn .del{background:transparent;border:0;color:var(--muted);cursor:pointer}
+.laps{max-height:160px;overflow:auto;padding-left:20px;margin:6px 0 0 0}
+footer{margin-top:12px;text-align:center;color:var(--muted);font-size:12px}
+@media (max-width:520px){.controls-row{flex-wrap:wrap}}
+
+/* keep layout stable when switching tabs so UI doesn't jump */
+main {
+  /* preserve space for the tallest tab (adjust px if you add more content) */
+  min-height: 320px;
+  transition: min-height .12s ease;
+}
+
+/* hide tab sections by default; show only the active one */
+.tab { display: none; }
+.tab.active { display: block; }
+
+/* keep display area and controls a fixed size so switching doesn't move other elements */
+.display { min-height: 56px; }
+.buttons { min-height: 48px; display:flex; align-items:center; justify-content:center; }
+
+/* preserve space for presets/laps so sidebar area doesn't collapse */
+.preset-list, #presetList, .presets { min-height: 80px; }

@@ -1,0 +1,155 @@
+:root{
+  --bg:#f4f7fb;
+  --card:#ffffff;
+  --accent:#2b74ff;
+  --muted:#6b7280;
+}
+*{box-sizing:border-box;font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;}
+body{margin:0;background:linear-gradient(180deg,#e9f0ff 0%,var(--bg) 100%);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;}
+header {
+    background-color: #4a90e2;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin: 0 0 18px;
+    font-size: 28px;
+    color: #0f172a;
+}
+
+.container {
+    width: 100%;
+    max-width: 720px;
+    margin: 20px auto;
+    padding: 20px;
+    background: transparent;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.input-group {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 18px;
+}
+
+input[type="text"] {
+    flex: 1;
+    min-width: 0;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 0;
+    background: var(--accent);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #357ab8;
+}
+
+.weather-info {
+    text-align: center;
+}
+
+.weather-info h2 {
+    margin: 10px 0;
+}
+
+.weather-info p {
+    margin: 5px 0;
+}
+
+.weather-result {
+    min-height: 140px;
+}
+
+.msg {
+    color: var(--muted);
+    padding: 20px;
+    background: var(--card);
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(11, 20, 50, 0.06);
+}
+
+.card {
+    background: var(--card);
+    padding: 18px;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(11, 20, 50, 0.06);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    align-items: center;
+}
+
+.place {
+    grid-column: 1 / -1;
+    text-align: left;
+}
+
+.place .name {
+    font-weight: 700;
+    color: #0b1220;
+}
+
+.place .country {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    justify-content: flex-start;
+}
+
+.temp {
+    font-size: 44px;
+    font-weight: 800;
+    color: #0b1220;
+}
+
+.icon {
+    font-size: 36px;
+}
+
+.details {
+    grid-column: 1 / -1;
+    text-align: left;
+    color: var(--muted);
+    font-size: 14px;
+    margin-top: 6px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 480px) {
+  .card {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .place {
+    text-align: center;
+  }
+  .details {
+    justify-content: center;
+  }
+  .main {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BMI Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>BMI Calculator</h1>
+
+    <div class="card form-card">
+      <div class="row">
+        <label>Weight</label>
+        <div class="input-inline">
+          <input id="weight" type="number" min="1" step="0.1" placeholder="70">
+          <select id="weightUnit">
+            <option value="kg">kg</option>
+            <option value="lb">lb</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <label>Height</label>
+        <div class="input-inline">
+          <input id="height" type="number" min="30" step="0.1" placeholder="175">
+          <select id="heightUnit">
+            <option value="cm">cm</option>
+            <option value="in">in</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row actions">
+        <button id="calcBtn" class="btn primary">Calculate</button>
+        <button id="resetBtn" class="btn">Reset</button>
+      </div>
+
+      <div id="result" class="result" aria-live="polite">
+        <div class="bmi-value">BMI: <span id="bmiValue">—</span></div>
+        <div id="bmiCategory" class="bmi-category">Category: —</div>
+      </div>
+    </div>
+
+    <div class="card chart-card">
+      <div class="chart-labels">
+        <div class="label">Underweight</div>
+        <div class="label">Normal</div>
+        <div class="label">Overweight</div>
+        <div class="label">Obesity</div>
+      </div>
+
+      <div class="bmi-bar" id="bmiBar" aria-hidden="true">
+        <div class="seg under"></div>
+        <div class="seg normal"></div>
+        <div class="seg over"></div>
+        <div class="seg obese"></div>
+        <div class="pointer" id="pointer"><span id="pointerTip">—</span></div>
+      </div>
+
+      <div class="legend">
+        <span><strong>&lt;18.5</strong> Under</span>
+        <span><strong>18.5–24.9</strong> Normal</span>
+        <span><strong>25–29.9</strong> Over</span>
+        <span><strong>≥30</strong> Obese</span>
+      </div>
+    </div>
+
+    <div class="note card">
+      Tip: Use kg & cm or lb & in. The chart maps BMI on a 10–50 scale.
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
