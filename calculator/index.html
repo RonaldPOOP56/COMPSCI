@@ -39,33 +39,36 @@
         <button class="btn" data-fn="sqr">x²</button>
         <button class="btn" data-fn="cube">x³</button>
         <button class="btn" data-value="%">%</button>
-        <button class="btn" data-action="clear">C</button>
         <button class="btn" data-action="del">⌫</button>
+        <button class="btn" data-action="clear">C</button>
 
-        <!-- numeric rows: numbers first, operator last in each row -->
+        <!-- row 5 -->
         <button class="btn" data-value="7">7</button>
         <button class="btn" data-value="8">8</button>
         <button class="btn" data-value="9">9</button>
-        <button class="btn" data-value="." style="visibility:hidden" aria-hidden="true">.</button> <!-- spacer -->
-        <button class="btn operator" data-value="÷">÷</button>
+        <button class="btn operator col-4" data-value="÷">÷</button>
+        <button class="btn col-5" style="visibility:hidden" aria-hidden="true"></button>
 
+        <!-- row 6 -->
         <button class="btn" data-value="4">4</button>
         <button class="btn" data-value="5">5</button>
         <button class="btn" data-value="6">6</button>
-        <button class="btn" data-fn="neg">±</button>
-        <button class="btn operator" data-value="×">×</button>
+        <button class="btn operator col-4" data-value="×">×</button>
+        <button class="btn col-5" style="visibility:hidden" aria-hidden="true"></button>
 
+        <!-- row 7 -->
         <button class="btn" data-value="1">1</button>
         <button class="btn" data-value="2">2</button>
         <button class="btn" data-value="3">3</button>
-        <button class="btn" data-value="0">0</button>
-        <button class="btn operator" data-value="−">−</button>
+        <button class="btn operator col-4" data-value="−">−</button>
+        <button class="btn col-5" style="visibility:hidden" aria-hidden="true"></button>
 
-        <button class="btn" data-value=".">.</button>
-        <button class="btn" data-value="00">00</button>
-        <button class="btn equal" data-action="equals">=</button>
-        <button class="btn wide" data-value="ANS" style="visibility:hidden" aria-hidden="true">ANS</button>
-        <button class="btn operator" data-value="+">+</button>
+        <!-- row 8 (fixed placement) -->
+        <button class="btn col-1" data-value="0">0</button>
+        <button class="btn col-2" data-value=".">.</button>
+        <button class="btn equal col-3" data-action="equals">=</button>
+        <button class="btn operator col-4" data-value="+">+</button>
+        <button class="btn col-5" style="visibility:hidden" aria-hidden="true"></button>
       </div>
     </div>
   </div>
