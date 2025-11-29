@@ -1,24 +1,43 @@
-/* decorative blobs, card media and animations for apps index */
-:root{
+:root {
   --bg:#f4f7fb; --card:#fff; --accent:#2b74ff; --muted:#6b7280; --shadow: rgba(11,20,50,0.06);
 }
 
-body{
-  background: linear-gradient(180deg,#eef6ff 0%,var(--bg) 100%);
-  overflow-x: hidden;
+/* base reset */
+*{box-sizing:border-box;font-family:system-ui,Segoe UI,Roboto,Arial}
+
+/* background image */
+body {
+  margin:0;
+  background-image: url('media/grass.png');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:100vh;
+  padding:24px;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
 }
 
-.wrap{
+/* semi-transparent overlay for readability */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0); /* adjust opacity if needed */
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* page layout */
+.wrap {
   position:relative;
   width:100%;
   max-width:880px;
-  margin:28px auto; /* center horizontally */
+  margin:28px auto;
   background:var(--card);
   padding:28px;
   border-radius:14px;
@@ -27,15 +46,10 @@ body{
   z-index:1;
 }
 
-/* floating decorative blobs */
-.decor{ position:absolute; inset:0; pointer-events:none; z-index:0 }
-.blob{ position:absolute; width:320px; height:320px; filter: blur(18px); opacity:.9; transform-origin:center }
-.blob.b1{ left:-80px; top:-60px; animation:float1 9s ease-in-out infinite }
-.blob.b2{ right:-80px; bottom:-60px; animation:float2 10s ease-in-out infinite; transform:scale(.9) }
-@keyframes float1{0%{transform:translateY(0) rotate(0)}50%{transform:translateY(10px) rotate(2deg)}100%{transform:translateY(0) rotate(0)}}
-@keyframes float2{0%{transform:translateY(0) rotate(0)}50%{transform:translateY(-10px) rotate(-2deg)}100%{transform:translateY(0) rotate(0)}}
+h1{margin:0 0 6px 0}
+.desc{color:var(--muted);margin:0 0 18px 0}
 
-/* cards grid and appearance */
+/* cards grid */
 .grid{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin:18px 0 8px;z-index:2}
 .card{
   position:relative;
@@ -44,7 +58,8 @@ body{
   box-shadow:0 10px 30px rgba(11,20,50,0.06);
   text-decoration:none;color:inherit;overflow:hidden;
   display:flex;flex-direction:column;align-items:stretch;
-  transform:translateY(6px);transition:transform .18s ease,box-shadow .18s ease,filter .18s ease;
+  transform:translateY(6px);
+  transition:transform .18s ease,box-shadow .18s ease,filter .18s ease;
   border:1px solid rgba(11,20,50,0.03);
   min-height:170px;
 }
@@ -79,7 +94,9 @@ body{
   background:linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 100%);
   transform:translateX(-120%); animation:shimmer 1.2s linear infinite;
 }
-@keyframes shimmer{100%{transform:translateX(120%) }}
+@keyframes shimmer{100%{transform:translateX(120%)}}
 
-/* small helper: visually-hidden for accessibility */
+/* accessibility helper */
 .vh{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
+
+.note{color:var(--muted);font-size:13px;margin-top:6px}

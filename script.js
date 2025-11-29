@@ -1,4 +1,4 @@
-// replace existing script.js — inject cards and use per-app emoji instead of generic file icon
+// inject cards dynamically with emoji + preview image
 document.addEventListener('DOMContentLoaded', () => {
   const apps = [
     { id: 'bmi', title: 'BMI', folder: 'bmi', img: 'bmi.png', emoji: '⚖️' },
@@ -6,10 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
     { id: 'calendar', title: 'Calendar', folder: 'calendar', img: 'calendar.png', emoji: '📅' },
     { id: 'game', title: 'Tic Tac Toe', folder: 'game', img: 'game.png', emoji: '🎮' },
     { id: 'notetaking', title: 'Note-taking', folder: 'notetaking', img: 'notetaking.png', emoji: '📝' },
-    { id: 'timer', title: 'Timer', folder: 'timer', img: 'timer.png', emoji: '⏱️' },
-    { id: 'to_do_list', title: 'To‑Do List', folder: 'to_do_list', img: 'to_do_list.png', emoji: '✅' },
-    { id: 'unit', title: 'Unit Converter', folder: 'unit', img: 'unit.png', emoji: '🔁' },
-    { id: 'weather-website', title: 'Weather', folder: 'weather-website', img: 'weather.png', emoji: '☀️' },
   ];
 
   // ensure nav/grid exists

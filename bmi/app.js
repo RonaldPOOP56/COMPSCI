@@ -1,4 +1,3 @@
-// BMI calculator + small horizontal chart
 document.addEventListener('DOMContentLoaded', () => {
   const weightEl = document.getElementById('weight');
   const weightUnitEl = document.getElementById('weightUnit');
@@ -10,30 +9,39 @@ document.addEventListener('DOMContentLoaded', () => {
   const bmiCategoryEl = document.getElementById('bmiCategory');
   const pointer = document.getElementById('pointer');
   const pointerTip = document.getElementById('pointerTip');
+  const bmiFill = document.getElementById('bmiFill');
 
   function computeBMI(w, h, wUnit, hUnit) {
-    // convert to kg and meters
     let kg = wUnit === 'lb' ? w * 0.45359237 : w;
     let m = hUnit === 'in' ? h * 0.0254 : h / 100;
     if (m <= 0) return null;
-    const bmi = kg / (m * m);
-    return bmi;
+    return kg / (m * m);
   }
 
   function categoryForBMI(bmi) {
-    if (bmi < 18.5) return {name: 'Underweight', color: 'under'};
-    if (bmi < 25) return {name: 'Normal weight', color: 'normal'};
-    if (bmi < 30) return {name: 'Overweight', color: 'over'};
-    return {name: 'Obesity', color: 'obese'};
+    if (bmi < 18.5) return { name: 'Underweight' };
+    if (bmi < 25) return { name: 'Normal weight' };
+    if (bmi < 30) return { name: 'Overweight' };
+    return { name: 'Obesity' };
   }
 
   function updatePointer(bmi) {
-    // map BMI to a 10..50 scale for display (clamped)
     const min = 10, max = 50;
     const val = Math.min(max, Math.max(min, bmi || 0));
     const pct = ((val - min) / (max - min)) * 100;
+
+    // animate pointer and fill together
     pointer.style.left = pct + '%';
-    pointerTip.textContent = isFinite(bmi) ? bmi.toFixed(1) : '—';
+    bmiFill.style.width = pct + '%';
+
+    // tooltip fade/slide
+    pointerTip.style.opacity = 0;
+    pointerTip.style.transform = 'translateY(-5px)';
+    setTimeout(() => {
+      pointerTip.textContent = isFinite(bmi) ? bmi.toFixed(1) : '—';
+      pointerTip.style.opacity = 1;
+      pointerTip.style.transform = 'translateY(0)';
+    }, 200);
   }
 
   function showResult(bmi) {
@@ -69,13 +77,16 @@ document.addEventListener('DOMContentLoaded', () => {
     bmiValueEl.textContent = '—';
     bmiCategoryEl.textContent = 'Category: —';
     updatePointer(NaN);
+    bmiFill.style.width = '0%';
   });
 
-  // quick calculate on Enter
-  [weightEl, heightEl].forEach(input => input.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') calcBtn.click();
-  }));
+  [weightEl, heightEl].forEach(input =>
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') calcBtn.click();
+    })
+  );
 
-  // init pointer center
+  // init pointer and fill
   updatePointer(NaN);
+  bmiFill.style.width = '0%';
 });
